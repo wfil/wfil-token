@@ -74,7 +74,7 @@ To manage the wrapping - unwrapping fee, the contract set the Fee Setter role to
 
 A **Gnosis Safe Multisig** is used to receive and store the wrapping fees and set inside the constructor.
 
-### [Backend](https://github.com/cristiam86/wfil-backend)
+### Backend
 
 Implements a custodial wallet by leveraging on Lotus APIs.  
 
@@ -82,11 +82,11 @@ Via AWS Lambda, allows to automatically wrap/unwrap Filecoin, by minting WFIL fr
 
 It's also connected via Filscan APIs to Filecoin to check for transactions that are tracked via Textile ThreadDB.
 
-### [Frontend](./app)
+### [Interface](https://github.com/wfil/wfil-interface)
 
 The Frontend has been implemented via Rimble UI & Rimble Web3 Components and deployed on IPFS via [Fleek](https://fleek.co/).
 
-### [Filecoin Wallet](https://wfil.network/#/wallet)
+### [Filecoin Wallet](https://github.com/wfil/wfil-interface)
 
 Implements a Filecoin client by leveraging on Lotus APIs.  
 
