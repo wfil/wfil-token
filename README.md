@@ -72,7 +72,7 @@ Implements a custodial wallet by leveraging on Lotus APIs.
 
 Via AWS Lambda, allows to automatically wrap/unwrap Filecoin, by minting WFIL from an account set as Minter and call the unwrap method to burn WFIL by the user.  
 
-It's also connected via Filscan APIs to Filecoin to check for transactions that are tracked via Textile ThreadDB.
+It's also connected to Filecoin via Lotus node to check for transactions that are tracked via Textile ThreadDB.
 
 ### [Interface](https://github.com/wfil/wfil-interface)
 
