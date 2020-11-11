@@ -182,29 +182,6 @@ Deploy
 ## Project deployed on Rinkeby
 [WFIL](https://rinkeby.etherscan.io/address/0x48be7b803052C273F6Ff3e7baC99cA160931C3bf)
 
-Using the DApp
-==============
-  - Install [Ganache GUI](https://www.trufflesuite.com/ganache).
-  - Change Ganache GUI port to 8545.
-  - Import Ganache GUI mnemonic into MetaMask.
-  - Connect MetaMask to Ganache GUI, adding a custom RPC specifing the Ganache GUI's RPC server URL.
-  - Deploy the smart contracts to Ganache GUI:
-    ```
-    $ truffle migrate
-    ```
-  - Move to client directory on the project:
-    ```sh
-    $ cd app
-    ```
-  - Install dependencies:
-    ```sh
-    $ yarn install
-    ```
-  - Start the Local Web Server:
-    ```sh
-    $ npm run start
-    ```
-
 About
 ============
 ## Inspiration & References
@@ -215,5 +192,4 @@ About
 ## Authors
 
 Project created by [Nazzareno Massari](https://nazzarenomassari.com) and [Cristiam Da Silva](https://cristiamdasilva.com/).  
-Team WrapFS for HackFS ETHGlobal Virtual Hackathon.  
 Logo by Cristiam Da Silva.
