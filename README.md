@@ -10,13 +10,13 @@
 
 > Wrapped Filecoin, ERC20 Wrapper over Filecoin
 
-`WFIL` is the fist ERC20 wrapper over Filecoin, backed by filecoin deposits on a custodial wallet (1:1 ratio).  
+`WFIL` is the first ERC20 wrapper over Filecoin, backed by filecoin deposits on a custodian wallet (1:1 ratio).  
 
-The current iteration implements a custodial pattern where users need to send filecoins to a custodial wallet and they'll get automatically the correspondent amount in `WFIL` to their ethereum addresses.  
+The current iteration implements a custodial pattern where users need to send filecoin to a custodial wallet and they will automatically get the correspondent amount in `WFIL` to their ethereum addresses.  
 
 Future Developments & Features:
 
-We'd like to migrate to a non-custodial pattern where by leveraging on Filecoin smart contracts we'd be able to implement a fully decentralized application.
+We'd like to migrate to a non-custodial pattern where by leveraging Filecoin smart contracts we'd be able to implement a fully decentralized application.
 
 Extend the Filecoin Wallet into a MetaMask for Filecoin.  
 
@@ -28,12 +28,6 @@ Applications:
 - WFIL as Collateral on MakerDAO
 - De-Fi
 - ...
-
-## Mentors
-
-- Andrew W. Hill (Textile), [@andrewxhill](https://github.com/andrewxhill)  
-- Aaron Sutula (Textile), [@asutula](https://github.com/asutula)
-- Ignacio Hagopian (Textile) [@jsign](https://github.com/jsign)
 
 ## Sections
 * [Building Blocks](#building-blocks)
@@ -60,7 +54,7 @@ The contract inherits OpenZeppelin *AccessControl* module to set the Pauser role
 
 Once the owner call the **pause()** function, thanks to the **_beforeTokenTransfer()** hook, *_mint()*, *_burn()* and *_transfer()* internal functions, will revert.  
 
-To avoid users from sending *WFIL* to the contract address, **_transfer()** has been overidden to make sure the recipient address does not correspond to the contract address, and revert if it does.   
+To avoid users from sending *WFIL* to the contract address, **_transfer()** has been overridden to make sure the recipient address does not correspond to the contract address, and revert if it does.   
 
 To manage the wrapping - unwrapping fee, the contract set the Fee Setter role to the owner of the contract that can set the fee via **setFee()** and the recipient via **setFeeTo()**. The fee is public and can be queried via the getter function **fee()**. 
 
@@ -70,7 +64,7 @@ A **Gnosis Safe Multisig** is used to receive and store the wrapping fees and se
 
 Implements a custodial wallet by leveraging on Lotus APIs.  
 
-Via AWS Lambda, allows to automatically wrap/unwrap Filecoin, by minting WFIL from an account set as Minter and call the unwrap method to burn WFIL by the user.  
+Via AWS Lambda, allows to automatically wrap/unwrap Filecoin, by minting WFIL from an account set as Minter and calling the unwrap method to burn WFIL by the user.  
 
 It's also connected to Filecoin via Lotus node to check for transactions that are tracked via Textile ThreadDB.
 
@@ -80,7 +74,7 @@ The Frontend has been implemented via Rimble UI & Rimble Web3 Components and dep
 
 ### [Filecoin Wallet](https://github.com/wfil/wfil-interface)
 
-Implements a Filecoin client by leveraging on Lotus APIs.  
+Implements a Filecoin client by leveraging Lotus APIs.  
 
 Further developments of the project include building a MetaMask for Filecoin, creating an extension for Chrome.  
 
