@@ -141,7 +141,7 @@ Clone this GitHub repository.
      $ mythx analyze
      ```
 ## Project deployed on Rinkeby
-[WFIL](https://rinkeby.etherscan.io/address/0xf33b9e9cc559329e25ca76e338e21e8e24e14c24#code)
+**WFIL:** [0xf33b9e9cc559329e25ca76e338e21e8e24e14c24](https://rinkeby.etherscan.io/address/0xf33b9e9cc559329e25ca76e338e21e8e24e14c24#code)
 
 About
 ============
