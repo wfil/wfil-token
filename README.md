@@ -52,7 +52,7 @@ The contract also implements the **unwrapFrom** function to allow the Factory co
 
 The contract inherits OpenZeppelin *AccessControl* module to set the Pauser role to the owner of the contract that can call the **pause**, **unpause** functions in case of emergency (Circuit Breaker Design Pattern).
 
-Once the owner call the **pause** function, thanks to the **_beforeTokenTransfer()** hook, *_mint()*, *_burn()* and *_transfer()* internal functions, will revert.  
+Once the owner call the **pause** function, thanks to the **_beforeTokenTransfer()** hook, *_mint()*, *_burn()* and *_transfer()* internal functions, will revert.    
 To avoid users from sending *WFIL* to the contract address, **_beforeTokenTransfer()** checks the recipient address to make sure it does not correspond to the contract address, and revert if it does on *_mint* and *_transfer* functions.   
 
 A **Gnosis Safe Multisig** is set as owner during deployment *dao_* to allow DAO members to grant the Minter Role to the Factory contract and future versions.  
