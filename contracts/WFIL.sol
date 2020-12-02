@@ -84,16 +84,17 @@ contract WFIL is ERC20, AccessControl, Pausable {
     /// @notice Add a new Minter
     /// @dev Access restricted only for Default Admin
     /// @param account Address of the new Minter
-    function addMinter(address account) external returns (bool) {
+    function addMinter(address account) external {
         require(hasRole(DEFAULT_ADMIN_ROLE, msg.sender), "WFIL: caller is not the default admin");
         require(account != address(0), "WFIL: account is the zero address");
         grantRole(MINTER_ROLE, account);
+        return true;
     }
 
     /// @notice Remove a Minter
     /// @dev Access restricted only for Default Admin
     /// @param account Address of the Minter
-    function removeMinter(address account) external returns (bool) {
+    function removeMinter(address account) external {
         require(hasRole(DEFAULT_ADMIN_ROLE, msg.sender), "WFIL: caller is not the default admin");
         revokeRole(MINTER_ROLE, account);
     }
