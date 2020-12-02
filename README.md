@@ -55,7 +55,7 @@ The contract inherits OpenZeppelin *AccessControl* module to set the Pauser role
 Once the owner call the **pause** function, thanks to the **_beforeTokenTransfer()** hook, *_mint()*, *_burn()* and *_transfer()* internal functions, will revert.    
 To avoid users from sending *WFIL* to the contract address, **_beforeTokenTransfer()** checks the recipient address to make sure it does not correspond to the contract address, and revert if it does on *_mint* and *_transfer* functions.   
 
-A **Gnosis Safe Multisig** is set as owner during deployment *dao_* to allow DAO members to grant the Minter Role to the Factory contract and future versions.  
+A **Gnosis Safe Multisig** is set as owner during deployment (*dao_*) to allow DAO members to grant the Minter Role to the Factory contract and future versions.  
 
 Setup
 ============
