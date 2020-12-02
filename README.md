@@ -10,23 +10,25 @@
 
 > Wrapped Filecoin, ERC20 Wrapper over Filecoin
 
-`WFIL` is the first ERC20 wrapper over Filecoin, backed by filecoin deposits on a custodian wallet (1:1 ratio).  
+`WFIL` is the first ERC20 wrapper over Filecoin backed by Filecoin deposits on a custodian wallet (1:1 ratio).
 
-The current iteration implements a custodial pattern where users need to send filecoin to a custodial wallet and they will automatically get the correspondent amount in `WFIL` to their ethereum addresses.  
+WFIL is implemented using OpenZeppelin ERC20 module and controlled by a Factory contract, set as minter by a DAO multisig contract (Gnosis Safe), to allow merchants and custodians to add mint/burn requests via ad-hoc APIs that interact with OpenZeppelin Defender Relay.
+
+Merchants and Custodians are approved by DAO members via Multisignatures.
 
 Future Developments & Features:
 
-We'd like to migrate to a non-custodial pattern where by leveraging Filecoin smart contracts we'd be able to implement a fully decentralized application.
-
-Extend the Filecoin Wallet into a MetaMask for Filecoin.  
+We plan to develop a non-custodian version where by leveraging Filecoin smart contracts we'd be able to implement a fully decentralized application.  
 
 One of the features we're considering is to add the permit() function to WFIL to allow meta transactions by leveraging on OpenZeppelin ERC20Permit module (currently in progress) and incentivise adoption in the space.
 
 Applications:
 
+- Lending Platforms (MakerDAO, Compound, Aave)
+- Liquidity Pools (Curve, Balancer)
 - Uniswap
-- WFIL as Collateral on MakerDAO
-- De-Fi
+- De-Fi 
+- Access to Filecoin Storage Deals to Ethereum Users
 - ...
 
 ## Sections
@@ -42,40 +44,18 @@ Applications:
 
 Implements an ERC20 token by leveraging on OpenZeppelin Library.  
 
-It allows the owner of the contract, set as Default Admin to add/remove a Minter via **grantRole()**, **revokeRole()** functions by leveraging on *AccessControl* module by OpenZeppelin.  
+It allows the owner of the contract, a multisig contract (Gnosis Safe) to add/remeove a Minter (Factory contract) via **addMinter**, **removeMinter** functions by leveraging on *AccessControl* module by OpenZeppelin.
 
-The contract implements the **wrap()** function to mint WFIL by passing the recepient address and the amount of Filecoin to wrap as parameters and emitting an event, *Wrapped*.  
+The contract implements the **wrap** function to mint WFIL by passing the recepient address and the amount of Filecoin to wrap as parameters and emitting an event, *Wrapped*.  
 
-The contract also implements the **unwrap()** function to burn the WFIL by passing the filecoin address and the amount of WFIL to unwrap as parameters and emitting an event, *Unwrapped*.  
+The contract also implements the **unwrapFrom** function to allow the Factory contract to burn the WFIL by passing the holder address  and the amount of WFIL to burn as parameters and emitting an event, *Unwrapped*. In order to mitigate Allowance Double-Spend Exploit we recommend merchants to use **increaseAllowance** and **decreaseAllowance** functions.  
 
-The contract inherits OpenZeppelin *AccessControl* module to set the Pauser role to the owner of the contract that can call the **pause()**, **unpause()** functions in case of emergency (Circuit Breaker Design Pattern).
+The contract inherits OpenZeppelin *AccessControl* module to set the Pauser role to the owner of the contract that can call the **pause**, **unpause** functions in case of emergency (Circuit Breaker Design Pattern).
 
-Once the owner call the **pause()** function, thanks to the **_beforeTokenTransfer()** hook, *_mint()*, *_burn()* and *_transfer()* internal functions, will revert.  
+Once the owner call the **pause** function, thanks to the **_beforeTokenTransfer()** hook, *_mint()*, *_burn()* and *_transfer()* internal functions, will revert.  
+To avoid users from sending *WFIL* to the contract address, **_beforeTokenTransfer()** checks the recipient address to make sure it does not correspond to the contract address, and revert if it does on *_mint* and *_transfer* functions.   
 
-To avoid users from sending *WFIL* to the contract address, **_transfer()** has been overridden to make sure the recipient address does not correspond to the contract address, and revert if it does.   
-
-To manage the wrapping - unwrapping fee, the contract set the Fee Setter role to the owner of the contract that can set the fee via **setFee()** and the recipient via **setFeeTo()**. The fee is public and can be queried via the getter function **fee()**. 
-
-A **Gnosis Safe Multisig** is used to receive and store the wrapping fees and set inside the constructor.
-
-### Backend
-
-Implements a custodial wallet by leveraging on Lotus APIs.  
-
-Via AWS Lambda, allows to automatically wrap/unwrap Filecoin, by minting WFIL from an account set as Minter and calling the unwrap method to burn WFIL by the user.  
-
-It's also connected to Filecoin via Lotus node to check for transactions that are tracked via Textile ThreadDB.
-
-### [Interface](https://github.com/wfil/wfil-interface)
-
-The Frontend has been implemented via Rimble UI & Rimble Web3 Components and deployed on IPFS via [Fleek](https://fleek.co/).
-
-### [Filecoin Wallet](https://github.com/wfil/wfil-interface)
-
-Implements a Filecoin client by leveraging Lotus APIs.  
-
-Further developments of the project include building a MetaMask for Filecoin, creating an extension for Chrome.  
-
+A **Gnosis Safe Multisig** is set as owner during deployment *dao_* to allow DAO members to grant the Minter Role to the Factory contract and future versions.  
 
 Setup
 ============
