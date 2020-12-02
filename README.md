@@ -2,7 +2,7 @@
 [![#npm 12.19.0](https://img.shields.io/badge/npm-v12.19.0-blue?style=plastic)](https://github.com/nvm-sh/nvm#installation-and-update)
 [![#built_with_Truffle](https://img.shields.io/badge/built%20with-Truffle-blueviolet?style=plastic)](https://www.trufflesuite.com/)
 [![#solc 0.6.12](https://img.shields.io/badge/solc-v0.6.12-brown?style=plastic)](https://github.com/ethereum/solidity/releases/tag/v0.6.12)
-[![#testnet rinkeby](https://img.shields.io/badge/testnet-Rinkeby-yellow?style=plastic&logo=Ethereum)](https://rinkeby.etherscan.io/address/0xf33b9e9cc559329e25ca76e338e21e8e24e14c24)
+[![#testnet rinkeby](https://img.shields.io/badge/testnet-Rinkeby-yellow?style=plastic&logo=Ethereum)](https://rinkeby.etherscan.io/address/0xf33b9e9cc559329e25ca76e338e21e8e24e14c24#code)
 
 <img src="wfil.svg" width="20%">
 
@@ -141,7 +141,7 @@ Clone this GitHub repository.
      $ mythx analyze
      ```
 ## Project deployed on Rinkeby
-[WFIL](https://rinkeby.etherscan.io/address/0xf33b9e9cc559329e25ca76e338e21e8e24e14c24)
+[WFIL](https://rinkeby.etherscan.io/address/0xf33b9e9cc559329e25ca76e338e21e8e24e14c24#code)
 
 About
 ============
