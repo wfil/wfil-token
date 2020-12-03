@@ -1,6 +1,7 @@
 /// SPDX-License-Identifier: AGPL-3.0-or-later
 pragma solidity 0.6.12;
 
+/// Copyright (C) 2020 WFIL Labs, Inc.
 /// @title WFIL
 /// @author Nazzareno Massari @naszam
 /// @notice Wrapped Filecoin
