@@ -1,6 +1,6 @@
 {
-  "name": "wfil",
-  "version": "0.6.0",
+  "name": "WFIL",
+  "version": "1.0.0",
   "description": "Wrapped Filecoin (WFIL)",
   "main": "truffle-config.js",
   "scripts": {
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/naszam/wfil.git"
+    "url": "git+https://github.com/wfil/wfil-token.git"
   },
   "author": "Nazzareno Massari",
   "license": "AGPL-3.0",
   "bugs": {
-    "url": "https://github.com/naszam/wfil/issues"
+    "url": "https://github.com/wfil/wfil-token/issues"
   },
-  "homepage": "https://github.com/naszam/wfil#readme",
+  "homepage": "https://github.com/wfil/wfil-token#readme",
   "devDependencies": {
     "@openzeppelin/test-environment": "^0.1.6",
     "@openzeppelin/test-helpers": "^0.5.9",
