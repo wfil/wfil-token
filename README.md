@@ -26,13 +26,14 @@ Applications:
 - Lending Platforms (MakerDAO, Compound, Aave)
 - Liquidity Pools (Curve, Balancer)
 - Uniswap
-- De-Fi 
+- De-Fi
 - Access to Filecoin Storage Deals to Ethereum Users
 - ...
 
 ## Sections
 * [Building Blocks](#building-blocks)
 * [Setup](#setup)
+* [Audit](#audit)
 * [About](#about)
 
 ## Building Blocks
@@ -125,6 +126,11 @@ Clone this GitHub repository.
 ## Current Mainnet Contracts (3/12/2020)
 * **WFIL DAO:** [0x44443407e196298a0aD68207Aa93eA919df53961](https://etherscan.io/address/0x44443407e196298a0aD68207Aa93eA919df53961)  
 * **WFIL:** [0xd187C6C8C6aeE0F021F92cB02887A21D529e26cb](https://etherscan.io/address/0xd187C6C8C6aeE0F021F92cB02887A21D529e26cb#code)  
+
+Audit
+=====
+
+* [Quantstamp](Quantstamp_Audit_Report)
 
 About
 ============
