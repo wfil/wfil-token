@@ -124,9 +124,9 @@ Clone this GitHub repository.
 ## Development deployment
 **WFIL 0.7.0 (Rinkeby):** [0xf33b9e9cc559329e25ca76e338e21e8e24e14c24](https://rinkeby.etherscan.io/address/0xf33b9e9cc559329e25ca76e338e21e8e24e14c24#code)
 
-## Mainnet deployment
-**WFIL DAO:** [0x44443407e196298a0aD68207Aa93eA919df53961](https://etherscan.io/address/0x44443407e196298a0aD68207Aa93eA919df53961)  
-**WFIL 1.0.0:** [0xd187C6C8C6aeE0F021F92cB02887A21D529e26cb](https://etherscan.io/address/0xd187C6C8C6aeE0F021F92cB02887A21D529e26cb#code)  
+## Current Mainnet Contracts (3/12/2020)
+* **WFIL DAO (Gnosis Safe):** [0x44443407e196298a0aD68207Aa93eA919df53961](https://etherscan.io/address/0x44443407e196298a0aD68207Aa93eA919df53961)  
+* **WFIL:** [0xd187C6C8C6aeE0F021F92cB02887A21D529e26cb](https://etherscan.io/address/0xd187C6C8C6aeE0F021F92cB02887A21D529e26cb#code)  
 
 About
 ============
