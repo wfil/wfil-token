@@ -21,8 +21,6 @@ Future Developments & Features:
 
 We plan to develop a non-custodian version where by leveraging Filecoin smart contracts we'd be able to implement a fully decentralized application.  
 
-One of the features we're considering is to add the permit() function to WFIL to allow meta transactions by leveraging on OpenZeppelin ERC20Permit module (currently in progress) and incentivise adoption in the space.
-
 Applications:
 
 - Lending Platforms (MakerDAO, Compound, Aave)
