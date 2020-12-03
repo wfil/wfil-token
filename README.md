@@ -130,7 +130,7 @@ Clone this GitHub repository.
 Audit
 =====
 
-* [Quantstamp](Quantstamp_Audit_Report)
+* [Quantstamp](Quantstamp_Audit_Report.pdf)
 
 About
 ============
