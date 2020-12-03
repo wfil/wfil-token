@@ -1,7 +1,7 @@
 var WFIL = artifacts.require("WFIL");
-const rinkeby = require('./rinkeby');
+const mainnet = require('./mainnet');
 
 module.exports = function(deployer) {
 
-	deployer.deploy(WFIL, rinkeby.wfil.minter);
+	deployer.deploy(WFIL, mainnet.wfil.dao);
 };
