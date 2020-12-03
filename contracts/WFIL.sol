@@ -6,7 +6,7 @@ pragma solidity 0.6.12;
 /// @author Nazzareno Massari @naszam
 /// @notice Wrapped Filecoin
 /// @dev All function calls are currently implemented without side effects through TDD approach
-/// @dev OpenZeppelin library is used for secure contract development
+/// @dev OpenZeppelin Library is used for secure contract development
 
 /*
 ██     ██ ███████ ██ ██ 
@@ -62,7 +62,7 @@ contract WFIL is ERC20, AccessControl, Pausable {
     }
 
     /// @notice Unwrap WFIL
-    /// @dev Burn WFIl
+    /// @dev Burn WFIL
     /// @param amount The amount of WFIL to unwrap
     /// @return True if WFIL is successfully unwrapped
     function unwrap(uint256 amount) external returns (bool) {
@@ -116,7 +116,8 @@ contract WFIL is ERC20, AccessControl, Pausable {
     }
 
     /// @notice Hook to pause _mint(), _transfer() and _burn()
-    /// @dev Override ERC20 and ERC20Pausable Hooks
+    /// @dev Override ERC20 Hook
+    /// @dev Revert on transfers to token contract
     /// @param from Sender address
     /// @param to Recipient address
     /// @param amount Token amount
